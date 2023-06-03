@@ -45,7 +45,7 @@ const BodyUi = (props) => {
         </Button>
       </Box>
       <Box sx={{ mt: 2 }}>
-        <MatrixResult data={result} />
+        <MatrixResult data={result} columns={["source", "destiny", "cost"]} />
       </Box>
       <Box sx={{ height: "100%" }} minHeight="100%">
         <Tree

@@ -2,6 +2,9 @@ const usePrim = () => {
   const primMST = (graph) => {
     const result = primMSTImplementation(graph);
     console.log(result);
+    result.forEach((element) => {
+      element[2] = graph[element[0]][element[1]];
+    });
     return result;
   };
   const primMSTImplementation = (graph) => {
