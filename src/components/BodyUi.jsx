@@ -1,25 +1,34 @@
-import React from "react";
 import { Alert, Box, Button, Snackbar, Typography } from "@mui/material";
-import AccountTreeIcon from "@mui/icons-material/AccountTree";
-import Tree from "react-d3-tree";
-import { MatrixData } from "./MatrixData";
-import useBodyUi from "./use-bodyUi";
 import { MatrixResult } from "./MatrixResult";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import MatrixData from "./MatrixData";
+import React from "react";
+import Tree from "react-d3-tree";
+import useBodyUi from "./use-bodyUi";
 
 const BodyUi = (props) => {
-  const { data, tree, result, alert, handleAlertClose, handleResult } =
-    useBodyUi({
-      init: {
-        data: [
-          [0, 2, 0, 6, 0],
-          [2, 0, 3, 8, 5],
-          [0, 3, 0, 0, 7],
-          [6, 8, 0, 0, 9],
-          [0, 5, 7, 9, 0],
-        ],
-        result: [],
-      },
-    });
+  const {
+    data,
+    tree,
+    result,
+    alert,
+    handleAlertClose,
+    handleResult,
+    handleChangeMatrixValue,
+    handleMatrixAdd,
+    handleMatrixRemove,
+  } = useBodyUi({
+    init: {
+      data: [
+        [0, 2, 0, 6, 0],
+        [2, 0, 3, 8, 5],
+        [0, 3, 0, 0, 7],
+        [6, 8, 0, 0, 9],
+        [0, 5, 7, 9, 0],
+      ],
+      result: [],
+    },
+  });
   return (
     <Box sx={{ m: 1, p: 2, height: "100%" }} minHeight="100%">
       <Typography variant="body1" component="div">
@@ -28,9 +37,10 @@ const BodyUi = (props) => {
       <Box>
         <MatrixData
           matrix={data}
-          onChangeValue={() => {}}
-          onAdd={() => {}}
-          onRemove={() => {}}
+          onChangeValue={handleChangeMatrixValue}
+          onAdd={handleMatrixAdd}
+          onRemove={handleMatrixRemove}
+          readOnlyMode="mainDiagonal"
         />
       </Box>
       <Box sx={{ mt: 2 }}>
@@ -45,7 +55,11 @@ const BodyUi = (props) => {
         </Button>
       </Box>
       <Box sx={{ mt: 2 }}>
-        <MatrixResult data={result} columns={["source", "destiny", "cost"]} title="NEAR" />
+        <MatrixResult
+          data={result}
+          columns={["source", "destiny", "cost"]}
+          title="NEAR"
+        />
       </Box>
       <Box sx={{ height: "100%" }} minHeight="100%">
         <Tree
