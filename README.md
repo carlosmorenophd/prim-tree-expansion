@@ -14,6 +14,11 @@ El algoritmo comienza con un vértice arbitrario y luego hace crecer el MST agre
 
 La complejidad temporal del algoritmo de Prim es $O(V^2)$ u $O(E \log V)$ según la implementación, donde V es el número de vértices y E es el número de aristas en el gráfico.
 
+## Ejecución
+
+![Menu](asserts/menu.png)
+![Result](asserts/result.png)
+
 ## Acerca del autor 
 Estuandite de Doctorado: Juan Carlos Moreno Sanchez
 
@@ -36,6 +41,10 @@ The algorithm starts with an arbitrary vertex and then grows the MST by adding t
 
 
 The time complexity of Prim's algorithm is $O(V^2)$ or $O({E}\log V)$ depending on the implementation, where V is the number of vertices and E is the number of edges in the graph.
+
+## Execution
+![Menu](asserts/menu.png)
+![Result](asserts/result.png)
 
 
 ## About the author
