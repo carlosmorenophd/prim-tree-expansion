@@ -1,38 +1,18 @@
-# Programa para calcular el ordenamiento mediante Quicksort y Mergesort, además de obtener su árbol de ejecución (Español)
+# Programa para obtener el árbol de expansion minima y la matriz NEAR (Español)
 
 ## Introducción
 
-Este programa ordena una lista de datos utilizando el algoritmo Quicksort o Mergesort, mostrando su árbol de ejecución.
+Un algoritmo codicioso es un paradigma algorítmico que sigue la heurística de resolución de problemas de hacer la elección óptima localmente en cada etapa con la esperanza de encontrar un óptimo global. En otras palabras, hace la mejor elección posible en cada paso sin considerar las consecuencias generales ni examinar todas las soluciones posibles.
 
-## Quicksort 
+La principal característica de un algoritmo voraz es que realiza una serie de elecciones que son óptimas en el momento, sin reconsiderarlas después. Al seleccionar la solución óptima localmente en cada paso, el algoritmo tiene como objetivo alcanzar la mejor solución posible para todo el problema.
 
-Quicksort es un algoritmo de clasificación ampliamente utilizado que sigue el enfoque de divide y vencerás. Fue desarrollado por Tony Hoare en 1959 y es conocido por su eficiencia y desempeño promedio. Quicksort funciona dividiendo una matriz en dos subarreglos, ordenando recursivamente cada subarreglo y luego combinando los subarreglos ordenados para obtener el resultado ordenado final.
+## Prim 
+El algoritmo de Prim es un algoritmo codicioso que se utiliza para encontrar un árbol de expansión mínimo (MST) en un gráfico no dirigido ponderado. Un árbol de expansión mínimo es un árbol que conecta todos los vértices del gráfico con el peso total mínimo.
 
-1. Elija un elemento pivote de la matriz. El pivote puede ser cualquier elemento, pero es común seleccionar el último elemento como pivote.
+El algoritmo comienza con un vértice arbitrario y luego hace crecer el MST agregando el borde con el peso más pequeño que conecta un vértice en el MST con un vértice fuera del MST. Este proceso continúa hasta que todos los vértices están incluidos en el MST.
 
-2. Divida la matriz reorganizando sus elementos de modo que todos los elementos más pequeños que el pivote se coloquen antes del pivote y todos los elementos más grandes que el pivote se coloquen después del pivote. El elemento pivote debería estar ahora en su posición ordenada final.
 
-3. Aplique recursivamente los pasos 1 y 2 al subarreglo antes del pivote (es decir, los elementos más pequeños que el pivote) y al subarreglo después del pivote (es decir, los elementos más grandes que el pivote).
-
-4. Continúe con este proceso hasta que se ordene toda la matriz. El caso base para la recursividad es cuando un subarreglo tiene menos de dos elementos, ya que se considera ordenado.
-
-## Ejemplo del árbol de ejecucción
-
-![Quicksort](asserts/quicksort.png)
-
-## Mergesort
-
-Merge sort es un algoritmo de clasificación popular que sigue el enfoque de divide y vencerás. Fue inventado por John von Neumann en 1945. La ordenación por combinación divide la lista sin ordenar en sublistas más pequeñas, ordena esas sublistas de forma recursiva y luego las vuelve a fusionar para producir una lista ordenada.
-
-1. Divida la lista desordenada en dos mitades, aproximadamente del mismo tamaño.
-
-2. Ordene recursivamente cada mitad aplicando el algoritmo de ordenación por fusión.
-
-3. Vuelva a fusionar las dos sublistas ordenadas para obtener una única lista ordenada.
-
-## Ejemplo del árbol de ejecucción
-
-![Mergeort](asserts/mergeSort.png)
+La complejidad temporal del algoritmo de Prim es $O(V^2)$ u $O(E \log V)$ según la implementación, donde V es el número de vértices y E es el número de aristas en el gráfico.
 
 ## Acerca del autor 
 Estuandite de Doctorado: Juan Carlos Moreno Sanchez
@@ -41,40 +21,21 @@ Estuandite de Doctorado: Juan Carlos Moreno Sanchez
 
 <jcmorenos001@alumno.uaemex.mx>
 
-# Program to calculate the ordering using Quicksort and Mergesort, in addition to obtaining its execution tree (English)
+# Program to obtain the minimum spanning tree and the NEAR matrix (English)
 
 ## Introduction
-This program sorts a list of data using the Quicksort or Mergesort algorithm, displaying its execution tree.
+A greedy algorithm is an algorithmic paradigm that follows the problem-solving heuristic of making the locally optimal choice at each stage in the hope of finding a global optimum. In other words, it makes the best possible choice at each step without considering the overall consequences or examining all possible solutions.
 
-## Quicksort 
+The main characteristic of a greedy algorithm is that it makes a series of choices that are optimal at the moment, without reconsidering them later. By selecting the locally optimal solution at each step, the algorithm aims to reach the best possible solution for the entire problem.
 
-Quicksort is a widely used sorting algorithm that follows the divide-and-conquer approach. It was developed by Tony Hoare in 1959 and is known for its efficiency and average-case performance. Quicksort works by partitioning an array into two subarrays, recursively sorting each subarray, and then combining the sorted subarrays to obtain the final sorted result.
+## Prim
 
-1. Choose a pivot element from the array. The pivot can be any element, but it's common to select the last element as the pivot.
+The Prim's algorithm is a greedy algorithm that is used to find a minimum spanning tree (MST) in a weighted undirected graph. A minimum spanning tree is a tree that connects all the vertices of the graph with the minimum total weight.
 
-2. Partition the array by rearranging its elements so that all elements smaller than the pivot are placed before the pivot, and all elements greater than the pivot are placed after the pivot. The pivot element should now be in its final sorted position.
+The algorithm starts with an arbitrary vertex and then grows the MST by adding the edge with the smallest weight that connects a vertex in the MST to a vertex outside the MST. This process continues until all the vertices are included in the MST.
 
-3. Recursively apply steps 1 and 2 to the subarray before the pivot (i.e., the elements smaller than the pivot) and the subarray after the pivot (i.e., the elements greater than the pivot).
 
-4. Continue this process until the entire array is sorted. The base case for the recursion is when a subarray has fewer than two elements, as it is already considered sorted.
-
-## Execution Tree Example
-
-![Quicksort](asserts/quicksort.png)
-
-## Mergesort
-
-Merge sort is a popular sorting algorithm that follows the divide-and-conquer approach. It was invented by John von Neumann in 1945. Merge sort divides the unsorted list into smaller sublists, sorts those sublists recursively, and then merges them back together to produce a sorted list.
-
-1. Divide the unsorted list into two halves, roughly equal in size.
-
-2. Recursively sort each half by applying the merge sort algorithm.
-
-3. Merge the two sorted sublists back together to obtain a single sorted list.
-
-## Execution Tree Example
-
-![Mergeort](asserts/mergeSort.png)
+The time complexity of Prim's algorithm is $O(V^2)$ or $O({E}\log V)$ depending on the implementation, where V is the number of vertices and E is the number of edges in the graph.
 
 
 ## About the author
