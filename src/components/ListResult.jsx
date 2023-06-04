@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import React from "react";
 
-export const Result = ({ data }) => {
+export const ListResult = ({ data }) => {
   const content =
     data.length === 0 ? (
       <Skeleton variant="rectangular" width="100%" height={60} />
@@ -17,7 +17,7 @@ export const Result = ({ data }) => {
         <TableBody>
           <TableRow>
             {data.map((cell, indexCell) => (
-              <TableCell key={`cell-${indexCell}`}>{cell}</TableCell>
+              <TableCell key={`cell-result-list-${indexCell}`}>{cell}</TableCell>
             ))}
           </TableRow>
         </TableBody>
