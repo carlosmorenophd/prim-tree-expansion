@@ -1,16 +1,16 @@
 import {
   Box,
   Skeleton,
-  Tab,
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableRow,
+  Typography,
 } from "@mui/material";
 import React from "react";
 
-export const MatrixResult = ({ data, columns }) => {
+export const MatrixResult = ({ data, columns, title }) => {
   const contentHead =
     columns && columns.length > 0 ? (
       <TableHead>
@@ -47,5 +47,10 @@ export const MatrixResult = ({ data, columns }) => {
         </TableBody>
       </Table>
     );
-  return <Box>{content}</Box>;
+  return <Box>
+    <Typography variant="h5">
+      {title}
+    </Typography>
+    {content}
+  </Box>;
 };

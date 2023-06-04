@@ -2,7 +2,7 @@ import { useState } from "react";
 import { usePrim } from "../code/use-prime";
 
 const useBodyUi = ({ init }) => {
-  const { primMST } = usePrim();
+  const { primMST, getTree } = usePrim({init: {parent: 0}});
   const [data, setData] = useState(init.data);
   const [alert, setAlert] = useState(false);
   const [result, setResult] = useState(init.result);
@@ -89,6 +89,7 @@ const useBodyUi = ({ init }) => {
   //Functionality when user click en basic button
   const handleResult = () => {
     setResult(primMST(data));
+    setTree(getTree());
   };
 
   return {
