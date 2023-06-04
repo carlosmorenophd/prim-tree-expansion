@@ -30,7 +30,7 @@ const usePrim = ({ init }) => {
         });
       });
     }
-    console.log(tree);
+    // console.log(tree);
     return result;
   };
 
